@@ -23,13 +23,12 @@
     ]
   },
   "mixins": [
-    "jjlrs_random_additions.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.2",
     "fabric": "*",
-    "minecraft": "20w06a"
+    "minecraft": "1.16.*"
   },
   "suggests": {
     "flamingo": "*"

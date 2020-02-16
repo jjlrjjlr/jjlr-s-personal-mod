@@ -1,0 +1,135 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "block/gold_block",
+		"1": "block/soul_soil",
+		"2": "jjlrs_random_additions:block/ethereal_campfire_fire",
+		"particle": "block/gold_block"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 1, 12],
+			"faces": {
+				"north": {"uv": [4, 0, 12, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 8, 1], "texture": "#0"},
+				"south": {"uv": [7, 0, 15, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 1, 8], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [7, 7, 15, 15], "texture": "#0"},
+				"down": {"uv": [6, 2, 14, 10], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 1, 5],
+			"to": [11, 2, 11],
+			"faces": {
+				"north": {"uv": [0, 0, 6, 1], "texture": "#0"},
+				"east": {"uv": [3, 0, 9, 1], "texture": "#0"},
+				"south": {"uv": [9, 0, 15, 1], "texture": "#0"},
+				"west": {"uv": [5, 0, 11, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#missing"},
+				"down": {"uv": [0, 0, 4, 4], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [4, 2, 4],
+			"to": [12, 3, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 1], "texture": "#0"},
+				"east": {"uv": [0, 1, 1, 9], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [2, 0, 10, 1], "texture": "#0"},
+				"west": {"uv": [6, 0, 14, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#missing"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 3, 4],
+			"to": [11, 7, 5],
+			"faces": {
+				"north": {"uv": [5, 2, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"south": {"uv": [1, 0, 8, 4], "texture": "#0"},
+				"west": {"uv": [9, 10, 10, 14], "texture": "#0"},
+				"up": {"uv": [3, 0, 10, 1], "texture": "#0"},
+				"down": {"uv": [0, 0, 7, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [4, 3, 5],
+			"to": [5, 7, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"east": {"uv": [3, 0, 10, 4], "texture": "#0"},
+				"south": {"uv": [10, 3, 11, 7], "texture": "#0"},
+				"west": {"uv": [6, 7, 13, 11], "texture": "#0"},
+				"up": {"uv": [0, 7, 1, 14], "texture": "#0"},
+				"down": {"uv": [0, 0, 1, 7], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [5, 3, 11],
+			"to": [12, 7, 12],
+			"faces": {
+				"north": {"uv": [5, 0, 12, 4], "texture": "#0"},
+				"east": {"uv": [4, 3, 5, 7], "texture": "#0"},
+				"south": {"uv": [4, 10, 11, 14], "texture": "#0"},
+				"west": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"up": {"uv": [7, 0, 14, 1], "texture": "#0"},
+				"down": {"uv": [0, 0, 7, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [11, 3, 4],
+			"to": [12, 7, 11],
+			"faces": {
+				"north": {"uv": [4, 2, 5, 6], "texture": "#0"},
+				"east": {"uv": [5, 1, 12, 5], "texture": "#0"},
+				"south": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"west": {"uv": [8, 0, 15, 4], "texture": "#0"},
+				"up": {"uv": [0, 0, 1, 7], "texture": "#0"},
+				"down": {"uv": [0, 0, 1, 7], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [5, 6, 5],
+			"to": [11, 6, 11],
+			"faces": {
+				"north": {"uv": [0, 0, 6, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 6, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 6, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 6, 0], "texture": "#missing"},
+				"up": {"uv": [5, 8, 11, 14], "texture": "#1"},
+				"down": {"uv": [0, 0, 6, 6], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [8, 6, 4],
+			"to": [8, 13, 12],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"shade": false,
+			"faces": {
+				"east": {"uv": [1, 0, 15, 16], "texture": "#2"},
+				"west": {"uv": [1, 0, 15, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [8, 6, 4],
+			"to": [8, 13, 12],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+			"shade": false,
+			"faces": {
+				"east": {"uv": [1, 0, 15, 16], "texture": "#2"},
+				"west": {"uv": [1, 0, 15, 16], "texture": "#2"}
+			}
+		}
+	],
+	"display": {},
+	"groups": [
+		{
+			"name": "soulfire_alter",
+			"origin": [8, 8, 8],
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+		}
+	]
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "lit=true": { "model": "jjlrs_random_additions:block/soulfire_alter_lit"},
+        "lit=false": { "model": "jjlrs_random_additions:block/soulfire_alter" }
+    }
+}
