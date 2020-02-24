@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.github.jjlrjjlr.jjlrsrandomadditions.Main"
+    ],
+    "client": [
+      {"value": "com.github.jjlrjjlr.jjlrsrandomadditions.client.ClientMain"}
     ]
   },
   "mixins": [

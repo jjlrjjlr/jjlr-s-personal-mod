@@ -12,6 +12,7 @@ public class Main implements ModInitializer {
 		// Proceed with mild caution.
 
 		BlocksRegistry.registerBlocks();
+		BlocksRegistry.registerBlockEntities();
 		BlocksRegistry.registerBlockItems();
 		BlocksRegistry.registerTransparentBlocks();
 		System.out.println("Starting...");
