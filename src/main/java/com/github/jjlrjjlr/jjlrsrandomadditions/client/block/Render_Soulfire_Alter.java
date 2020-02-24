@@ -11,6 +11,8 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.util.math.Vector3d;
+import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.item.ItemStack;
 
 /**
@@ -29,21 +31,16 @@ public class Render_Soulfire_Alter extends BlockEntityRenderer<EntitySoulfireAlt
         
         
         ItemStack burnitem = blockEntity.getInvStack(0);
-
-        //System.out.println("test from " + this.getClass().getName());
-
-        System.out.println(burnitem.getName().asString());
         
         if(!burnitem.isEmpty()){
             matrices.push();
-            System.out.println("test from render.....");
-            matrices.translate(0.5d, 1.0d, 0.5d);
+            matrices.translate(0.5d, 0.7d, 0.5d);
+            matrices.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(75.0f));
             matrices.scale(0.375f, 0.375f, 0.375f);
             int abovelight = WorldRenderer.getLightmapCoordinates(blockEntity.getWorld(), blockEntity.getPos().up());
             MinecraftClient.getInstance().getItemRenderer().renderItem(burnitem, ModelTransformation.Mode.FIXED, abovelight, overlay, matrices, vertexConsumers);
             matrices.pop();
         }
-
     }
     
 }
