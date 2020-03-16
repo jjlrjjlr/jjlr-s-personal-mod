@@ -10,13 +10,11 @@ import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.util.DefaultedList;
 import net.minecraft.util.Tickable;
-import net.minecraft.world.TickScheduler;
-import net.minecraft.world.World;
 
 public class EntitySoulfireAlter extends BlockEntity implements ImplementedInventory, BlockEntityClientSerializable, Tickable {
     
@@ -35,7 +33,7 @@ public class EntitySoulfireAlter extends BlockEntity implements ImplementedInven
     @Override
     public void tick() {
         if(!this.world.isClient()){
-            this.
+            
         }
         
     }
@@ -68,17 +66,22 @@ public class EntitySoulfireAlter extends BlockEntity implements ImplementedInven
         if(item!=null && this.getInvStack(0).isEmpty()){
             this.setInvStack(0, item);
             this.markDirty();
-            this.sync();
+            
         } else{
             logger.warn("A problem occured while trying to add item to blockentity at" + this.getPos().toShortString());
         }
     }
 
-    public ItemStack removeItemInInventory(PlayerEntity player) {
+    public void removeItemInInventory(PlayerEntity player) {
 
-        ItemStack returnItem = this.removeInvStack(0);
+        player.inventory.offerOrDrop(world, this.removeInvStack(0));
         this.markDirty();
+    }
+
+    @Override
+    public void markDirty() {
+        super.markDirty();
         this.sync();
-        return returnItem;
+        logger.info("marked");
     }
 }

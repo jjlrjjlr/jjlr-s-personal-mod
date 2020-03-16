@@ -13,7 +13,6 @@ import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Items;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager.Builder;
@@ -45,20 +44,22 @@ public class Soulfire_Alter extends Block implements BlockEntityProvider {
         }
 
         if(!world.isClient){
-        
+            EntitySoulfireAlter soulfireentity = (EntitySoulfireAlter)world.getBlockEntity(pos);
             Inventory blockEntity = (Inventory)world.getBlockEntity(pos);
 
              if(!player.getStackInHand(hand).isEmpty()){
                 if(blockEntity.getInvStack(0).isEmpty()){
-                    blockEntity.setInvStack(0, player.getMainHandStack().copy());
+                    //blockEntity.setInvStack(0, player.getMainHandStack().copy());
+                    soulfireentity.placeItemInInventory(player.getMainHandStack().copy());
                     player.getMainHandStack().setCount(0);
-                    world.getBlockEntity(pos).markDirty();
+                    //world.getBlockEntity(pos).markDirty();
                 }
             } else if(player.getStackInHand(hand).isEmpty()){
                 if(!blockEntity.getInvStack(0).isEmpty()){
-                    player.inventory.offerOrDrop(world, blockEntity.getInvStack(0));
-                    blockEntity.removeInvStack(0);
-                    world.getBlockEntity(pos).markDirty();
+                    soulfireentity.removeItemInInventory(player);
+                    //player.inventory.offerOrDrop(world, soulfireentity.removeItemInInventory());
+                    //blockEntity.removeInvStack(0);
+                    //world.getBlockEntity(pos).markDirty();
                 }
             }
         }
