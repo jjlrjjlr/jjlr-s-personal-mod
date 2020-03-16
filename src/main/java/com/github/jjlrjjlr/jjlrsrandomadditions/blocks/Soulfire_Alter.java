@@ -52,11 +52,13 @@ public class Soulfire_Alter extends Block implements BlockEntityProvider {
                 if(blockEntity.getInvStack(0).isEmpty()){
                     blockEntity.setInvStack(0, player.getMainHandStack().copy());
                     player.getMainHandStack().setCount(0);
+                    world.getBlockEntity(pos).markDirty();
                 }
             } else if(player.getStackInHand(hand).isEmpty()){
                 if(!blockEntity.getInvStack(0).isEmpty()){
                     player.inventory.offerOrDrop(world, blockEntity.getInvStack(0));
                     blockEntity.removeInvStack(0);
+                    world.getBlockEntity(pos).markDirty();
                 }
             }
         }

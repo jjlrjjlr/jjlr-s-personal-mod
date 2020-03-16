@@ -2,9 +2,15 @@ package com.github.jjlrjjlr.jjlrsrandomadditions;
 
 import com.github.jjlrjjlr.jjlrsrandomadditions.blocks.BlocksRegistry;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
+
 import net.fabricmc.api.ModInitializer;
 
 public class Main implements ModInitializer {
+
+	private static Logger logger = (Logger) LogManager.getLogger("jjlrsrandomadditions");
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -15,6 +21,6 @@ public class Main implements ModInitializer {
 		BlocksRegistry.registerBlockEntities();
 		BlocksRegistry.registerBlockItems();
 		BlocksRegistry.registerTransparentBlocks();
-		System.out.println("Starting...");
+		logger.info("jjlrsrandomadditions Started.");
 	}
 }
