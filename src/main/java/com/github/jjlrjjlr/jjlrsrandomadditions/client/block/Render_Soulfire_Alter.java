@@ -27,8 +27,6 @@ public class Render_Soulfire_Alter extends BlockEntityRenderer<EntitySoulfireAlt
     @Override
     public void render(EntitySoulfireAlter blockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         
-        
-        
         ItemStack burnitem = blockEntity.getInvStack(0);
         
         if(!burnitem.isEmpty()){

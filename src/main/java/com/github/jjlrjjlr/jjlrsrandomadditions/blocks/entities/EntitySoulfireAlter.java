@@ -12,7 +12,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.util.DefaultedList;
 import net.minecraft.util.Tickable;
 
@@ -53,6 +52,7 @@ public class EntitySoulfireAlter extends BlockEntity implements ImplementedInven
     @Override
     public void fromClientTag(CompoundTag tag) {
         super.fromTag(tag);
+        this.items.clear();
         Inventories.fromTag(tag, items);
     }
 
@@ -80,8 +80,10 @@ public class EntitySoulfireAlter extends BlockEntity implements ImplementedInven
 
     @Override
     public void markDirty() {
-        super.markDirty();
-        this.sync();
-        logger.info("marked");
+        if(!this.world.isClient){
+            super.markDirty();
+            this.sync();
+            logger.info("marked");
+        }
     }
 }

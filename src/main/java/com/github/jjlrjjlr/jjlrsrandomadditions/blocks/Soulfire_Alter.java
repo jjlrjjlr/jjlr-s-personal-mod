@@ -63,6 +63,10 @@ public class Soulfire_Alter extends Block implements BlockEntityProvider {
                 }
             }
         }
+        if(!world.isClient){
+            ((EntitySoulfireAlter) world.getBlockEntity(pos)).markDirty();
+            System.out.println("test sync.");
+        }
         return ActionResult.SUCCESS;
     }
 
@@ -103,5 +107,5 @@ public class Soulfire_Alter extends Block implements BlockEntityProvider {
 	@Override
 	public BlockEntity createBlockEntity(BlockView view) {
 		return new EntitySoulfireAlter();
-	}
+    }
 }
